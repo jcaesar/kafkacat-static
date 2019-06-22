@@ -14,14 +14,16 @@ RUN emerge --unmerge openssh ssh \
 		--exclude='gzip bzip2 tar xz' \
 		--exclude='debianutils patch pinentry' \
 		kafkacat meson dev-util/ninja \
-		app-arch/zstd app-arch/lz4 dev-libs/cyrus-sasl
+		app-arch/zstd app-arch/lz4 dev-libs/cyrus-sasl jq
 
 WORKDIR /opt/kafkacat
-RUN tar --strip-components=1 -xvf /usr/portage/distfiles/*kafkacat*
-		
 COPY . .
 RUN true \
+	&& ver=$(sed -rn "H;1h;\$!d;x;s/^.*project\([^)]*kafkacat[^)]*version:[ \t]*'([^']+)'.*$/\1/p" meson.build) \
+	&& wget https://github.com/edenhill/kafkacat/archive/$ver.tar.gz -O/opt/src.tgz \
+	&& tar --strip-components=1 -xvf /opt/src.tgz \
 	&& meson build --wrap-mode forcefallback -Ddefault_library=static -Dstatic=true \
+	&& test "$(meson introspect --projectinfo build | jq -r .version)" == $ver \
 	&& ninja -C build kafkacat \
 	&& ldd build/kafkacat | grep -q 'not.*dynamic'
 
