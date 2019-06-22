@@ -4,7 +4,7 @@ COPY --from=portage /usr/portage /usr/portage
 
 RUN true \
 	&& echo 'CONFIG_PROTECT="-*"' >>/etc/portage/make.conf \
-	&& echo 'USE="static static-libs"' >>/etc/portage/make.conf \
+	&& echo 'USE="static-libs"' >>/etc/portage/make.conf \
 	&& echo 'FEATURES="-sandbox -ipc-sandbox -network-sandbox -pid-sandbox -usersandbox"' >>/etc/portage/make.conf # can't sandbox in the sandbox \
 	&& sed -i '/^\/usr\/lib$/ d; /^\/lib$/ d;' /etc/ld.so.conf
 
