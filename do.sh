@@ -16,3 +16,8 @@ ninja -Cbuild kafkacat
 
 test "$(meson introspect --projectinfo build | jq -r .version)" == $ver || ( echo 1>&2 "Version Weirdness"; false )
 ldd build/kafkacat | grep -qi 'not.*dynamic' || ( echo 1>&2 "Not a static executable"; ldd build/kafkacat; false )
+
+cat >kafkacat-LICENSES.txt \
+	meson/librdkafka-1.0.1/LICENSES.txt \
+	<(echo -e '\nyajl.LICENSE\n------------\n') \
+	meson/yajl-2.1.0/COPYING
