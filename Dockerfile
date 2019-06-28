@@ -1,14 +1,8 @@
 FROM debian:buster as builder
 
-RUN apt update \
-	&& apt install -y \
-		jq \
-		build-essential pkg-config \
-		meson ninja-build \
-		wget ca-certificates \
-		musl-tools
-
 WORKDIR /opt/kafkacat
+COPY ./deps.sh .
+RUN ./deps.sh
 COPY . .
 RUN ./do.sh
 

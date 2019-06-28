@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: debian:buster
+    steps:
+      - checkout
+      - run: ./deps.sh
+      - run: ./do.sh
+      - store_artifacts:
+          path: build/kafkacat
+          destination: kafkacat
