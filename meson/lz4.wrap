@@ -1,10 +1,10 @@
 [wrap-file]
-directory = lz4-1.8.3
+directory = lz4-1.9.1
 
-source_url = https://github.com/lz4/lz4/archive/v1.8.3.tar.gz
-source_filename = lz4-1.8.3.tgz
-source_hash = 33af5936ac06536805f9745e0b6d61da606a1f8b4cc5c04dd3cbaca3b9b4fc43
+source_url = https://github.com/lz4/lz4/archive/v1.9.1.tar.gz
+source_filename = lz4-1.9.1.tgz
+source_hash = f8377c89dad5c9f266edc0be9b73595296ecafd5bfa1000de148096c50052dc4
 
-patch_url = https://github.com/jcaesar/crappywraps/releases/download/5/lz4-patch.tgz
+patch_url = https://github.com/jcaesar/crappywraps/releases/download/12/lz4-patch.tgz
 patch_filename = lz4-patch-dl.tgz
-patch_hash = ed54eb18b5ed5621a8c9f1e05617e3cdc082491e37671448d084c7c86f84d169
+patch_hash = 5d12de1ed0f30c4daa2b17ce59e63074bf60a417bffc4890606ce8149bdb03bd
