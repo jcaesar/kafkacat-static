@@ -3,9 +3,10 @@
 set -eu
 
 ver=$(sed -rn "H;1h;\$!d;x;s/^.*project\([^)]*kafkacat[^)]*version:[ \t]*'([^']+)'.*$/\1/p" meson.build)
-wget https://github.com/edenhill/kafkacat/archive/$ver.tar.gz -Osrc.tgz
-tar --strip-components=1 -xvf src.tgz
-rm src.tgz
+wget https://github.com/edenhill/kafkacat/archive/$ver.tar.gz -Osrc-$ver.tgz
+sha256sum --ignore-missing -c <sha256
+tar --strip-components=1 -xvf src-$ver.tgz
+rm src-$ver.tgz
 
 CC=musl-gcc meson build --wrap-mode forcefallback \
 	-Ddefault_library=static \
