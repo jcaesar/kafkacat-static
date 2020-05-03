@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run: ./deps.sh
       - run: ./do.sh
-      - run: tar cJvf kafkacat.txz build/kafkacat kafkacat-LICENSES.txt
+      - run: tar cJvf kafkacat.txz build/kafkacat build/kafkacat-LICENSES.txt
       - store_artifacts:
           path: kafkacat.txz
           destination: kafkacat.txz
