@@ -5,6 +5,6 @@ source_url = https://github.com/edenhill/librdkafka/archive/v1.4.0.tar.gz
 source_filename = rdkafka-1.4.0.tgz
 source_hash = ae27ea3f3d0d32d29004e7f709efbba2666c5383a107cc45b3a1949486b2eb84
 
-patch_url = https://github.com/jcaesar/crappywraps/releases/download/15/rdkafka-patch.tgz
-patch_filename = rdkafka-patch-dl.tgz
-patch_hash = 6328158f788e30525a3f2b79b999d46e2b42d99747cc98a1247d36215d752b87
+patch_url = https://wrapdb.mesonbuild.com/v1/projects/rdkafka/1.4.0/1/get_zip
+patch_filename = rdkafka-1.4.0-1-wrap.zip
+patch_hash = 047db84f18a8122ef2dd0eaa69c3353cca8cec1bf368f8103d7f8e6a34681b67
