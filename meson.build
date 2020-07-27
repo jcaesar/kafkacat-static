@@ -1,4 +1,4 @@
-project('kafkacat', 'c', version: '1.5.0', subproject_dir: 'meson')
+project('kafkacat', 'c', version: '1.6.0', subproject_dir: 'meson')
 
 static = get_option('static')
 yajl = dependency('yajl', version: '>=2', required: get_option('json'), static: static, fallback: ['yajl', 'yajl_dep'])
