@@ -7,4 +7,5 @@ apt install -y \
 	build-essential pkg-config \
 	meson ninja-build \
 	wget ca-certificates \
-	musl-tools
+	musl-tools \
+	upx
