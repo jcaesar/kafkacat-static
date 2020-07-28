@@ -21,7 +21,7 @@ CC=musl-gcc meson build src \
 ninja -Cbuild kafkacat
 
 test "$(meson introspect --projectinfo build | jq -r .version)" == $ver || ( echo 1>&2 "Version Weirdness"; false )
-ldd build/kafkacat | grep -qi 'not.*dynamic' || ( echo 1>&2 "Not a static executable"; ldd build/kafkacat; false )
+ldd build/kafkacat |& grep -qi 'not.*dynamic' || ( echo 1>&2 "Not a static executable"; ldd build/kafkacat; false )
 
 cat >build/kafkacat-LICENSES.txt \
 	src/meson/librdkafka-*/LICENSES.txt \

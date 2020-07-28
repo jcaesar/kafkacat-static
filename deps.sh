@@ -8,4 +8,6 @@ apt install -y \
 	meson ninja-build \
 	wget ca-certificates \
 	musl-tools \
-	upx
+	upx \
+	git \
+	python3-setuptools
