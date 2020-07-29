@@ -1,3 +1,4 @@
 src
 build
 *.sw[po]
+src-*.tgz

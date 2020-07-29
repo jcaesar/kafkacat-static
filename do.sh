@@ -3,14 +3,14 @@
 set -eu
 
 ver=$(sed -rn "H;1h;\$!d;x;s/^.*project\([^)]*kafkacat[^)]*version:[ \t]*'([^']+)'.*$/\1/p" meson.build)
-wget https://github.com/edenhill/kafkacat/archive/$ver.tar.gz -Osrc-$ver.tgz
-sha256sum --ignore-missing -c <sha256
+test -f src-$ver.tgz || wget https://github.com/edenhill/kafkacat/archive/$ver.tar.gz -Osrc-$ver.tgz
+sha256sum --ignore-missing -c <sha256 || ( rm -rf src-$ver.tgz; false )
 mkdir -p src
 tar --strip-components=1 -xvf src-$ver.tgz -C src
-rm src-$ver.tgz
 cp -r --reflink=auto -t src meson*
 
-CC=musl-gcc meson build src \
+export CC=${CC-musl-gcc}
+meson build src \
 	--wrap-mode forcefallback \
 	--buildtype release \
 	--strip \
