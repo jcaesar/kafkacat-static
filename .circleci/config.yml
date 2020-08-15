@@ -26,7 +26,10 @@ workflows:
   version: 2
   main:
     jobs:
-      - build
+      - build:
+          filters:
+            tags:
+              only: /^.*$/
       - hold:
           type: approval
           requires:
@@ -39,3 +42,6 @@ workflows:
       - publish-github-release:
           requires:
             - hold
+          filters:
+            tags:
+              only: /^.*$/
