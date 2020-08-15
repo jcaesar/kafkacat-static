@@ -4,13 +4,12 @@ jobs:
     docker:
       - image: debian:bullseye
     steps:
+      - run: { name: Install checkout deps, command: apt update && apt install -y git openssh-client }
       - checkout
       - run: ./deps.sh
       - run: ./do.sh
       - run: tar cJvf kafkacat.txz build/kafkacat build/kafkacat-LICENSES.txt
-      - store_artifacts:
-          path: kafkacat.txz
-          destination: kafkacat.txz
+      - store_artifacts: { path: kafkacat.txz, destination: kafkacat.txz }
 
   publish-github-release:
     docker:
