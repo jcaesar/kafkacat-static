@@ -1,10 +1,10 @@
 [wrap-file]
-directory = librdkafka-1.5.2
+directory = librdkafka-1.7.0
 
-source_url = https://github.com/edenhill/librdkafka/archive/v1.5.2.tar.gz
-source_filename = rdkafka-1.5.2.tgz
-source_hash = ca3db90d04ef81ca791e55e9eed67e004b547b7adedf11df6c24ac377d4840c6 
+source_url = https://github.com/edenhill/librdkafka/archive/v1.7.0.tar.gz
+source_filename = rdkafka-1.7.0.tgz
+source_hash = c71b8c5ff419da80c31bb8d3036a408c87ad523e0c7588e7660ee5f3c8973057
 
-patch_url = https://wrapdb.mesonbuild.com/v1/projects/rdkafka/1.5.2/1/get_zip
-patch_filename = rdkafka-1.5.2-1-wrap.zip
-patch_hash = 8c6c6d45a8963132ea5ebcffdde1e17eead2e4725100c0e2633c2c39d56646bb
+patch_url = https://wrapdb.mesonbuild.com/v1/projects/rdkafka/1.7.0/1/get_zip
+patch_filename = rdkafka-1.7.0-1-wrap.zip
+patch_hash = 8f44d83f3b45bb800738d41decf1f5207126e69afd8c507240660f298480e287
