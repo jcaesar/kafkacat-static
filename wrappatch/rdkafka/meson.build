@@ -9,69 +9,69 @@ hdr = files(
 )
 subdir('include-workaround-meson/librdkafka')
 srcc = [
-    'src/crc32c.c',
-    'src/rdaddr.c',
-    'src/rdavl.c',
-    'src/rdbuf.c',
-    'src/rdcrc32.c',
-    'src/rdfnv1a.c',
-    'src/rdkafka.c',
-    'src/rdkafka_assignment.c',
-    'src/rdkafka_assignor.c',
-    'src/rdkafka_broker.c',
-    'src/rdkafka_buf.c',
-    'src/rdkafka_cgrp.c',
-    'src/rdkafka_conf.c',
-    'src/rdkafka_event.c',
-    'src/rdkafka_feature.c',
-    'src/rdkafka_lz4.c',
-    'src/rdkafka_metadata.c',
-    'src/rdkafka_metadata_cache.c',
-    'src/rdkafka_msg.c',
-    'src/rdkafka_msgset_reader.c',
-    'src/rdkafka_msgset_writer.c',
-    'src/rdkafka_offset.c',
-    'src/rdkafka_op.c',
-    'src/rdkafka_partition.c',
-    'src/rdkafka_pattern.c',
-    'src/rdkafka_queue.c',
-    'src/rdkafka_range_assignor.c',
-    'src/rdkafka_request.c',
-    'src/rdkafka_roundrobin_assignor.c',
-    'src/rdkafka_sasl.c',
-    'src/rdkafka_sasl_plain.c',
-    'src/rdkafka_sticky_assignor.c',
-    'src/rdkafka_subscription.c',
-    'src/rdkafka_timer.c',
-    'src/rdkafka_topic.c',
-    'src/rdkafka_transport.c',
-    'src/rdkafka_interceptor.c',
-    'src/rdkafka_header.c',
-    'src/rdkafka_admin.c',
-    'src/rdkafka_aux.c',
-    'src/rdkafka_background.c',
-    'src/rdkafka_idempotence.c',
-    'src/rdkafka_txnmgr.c',
-    'src/rdkafka_cert.c',
-    'src/rdkafka_coord.c',
-    'src/rdkafka_mock.c',
-    'src/rdkafka_mock_handlers.c',
-    'src/rdkafka_mock_cgrp.c',
-    'src/rdkafka_error.c',
-    'src/rdlist.c',
-    'src/rdmap.c',
-    'src/rdlog.c',
-    'src/rdmurmur2.c',
-    'src/rdports.c',
-    'src/rdrand.c',
-    'src/rdregex.c',
-    'src/rdstring.c',
-    'src/rdunittest.c',
-    'src/rdvarint.c',
-    'src/snappy.c',
-    'src/tinycthread.c',
-    'src/tinycthread_extra.c',
-    'src/rdxxhash.c',
+	'src/crc32c.c',
+	'src/rdaddr.c',
+	'src/rdavl.c',
+	'src/rdbuf.c',
+	'src/rdcrc32.c',
+	'src/rdfnv1a.c',
+	'src/rdkafka.c',
+	'src/rdkafka_assignment.c',
+	'src/rdkafka_assignor.c',
+	'src/rdkafka_broker.c',
+	'src/rdkafka_buf.c',
+	'src/rdkafka_cgrp.c',
+	'src/rdkafka_conf.c',
+	'src/rdkafka_event.c',
+	'src/rdkafka_feature.c',
+	'src/rdkafka_lz4.c',
+	'src/rdkafka_metadata.c',
+	'src/rdkafka_metadata_cache.c',
+	'src/rdkafka_msg.c',
+	'src/rdkafka_msgset_reader.c',
+	'src/rdkafka_msgset_writer.c',
+	'src/rdkafka_offset.c',
+	'src/rdkafka_op.c',
+	'src/rdkafka_partition.c',
+	'src/rdkafka_pattern.c',
+	'src/rdkafka_queue.c',
+	'src/rdkafka_range_assignor.c',
+	'src/rdkafka_request.c',
+	'src/rdkafka_roundrobin_assignor.c',
+	'src/rdkafka_sasl.c',
+	'src/rdkafka_sasl_plain.c',
+	'src/rdkafka_sticky_assignor.c',
+	'src/rdkafka_subscription.c',
+	'src/rdkafka_timer.c',
+	'src/rdkafka_topic.c',
+	'src/rdkafka_transport.c',
+	'src/rdkafka_interceptor.c',
+	'src/rdkafka_header.c',
+	'src/rdkafka_admin.c',
+	'src/rdkafka_aux.c',
+	'src/rdkafka_background.c',
+	'src/rdkafka_idempotence.c',
+	'src/rdkafka_txnmgr.c',
+	'src/rdkafka_cert.c',
+	'src/rdkafka_coord.c',
+	'src/rdkafka_mock.c',
+	'src/rdkafka_mock_handlers.c',
+	'src/rdkafka_mock_cgrp.c',
+	'src/rdkafka_error.c',
+	'src/rdlist.c',
+	'src/rdmap.c',
+	'src/rdlog.c',
+	'src/rdmurmur2.c',
+	'src/rdports.c',
+	'src/rdrand.c',
+	'src/rdregex.c',
+	'src/rdstring.c',
+	'src/rdunittest.c',
+	'src/rdvarint.c',
+	'src/snappy.c',
+	'src/tinycthread.c',
+	'src/tinycthread_extra.c',
+	'src/rdxxhash.c',
 ]
 srccpp = [
 	'src-cpp/ConfImpl.cpp',
@@ -135,19 +135,19 @@ if dl.found()
 	built_with += ' LIBDL PLUGINS'
 endif
 if sasl.found()
-  if host_machine.system() == 'windows'
-	srcc += 'src/rdkafka_sasl_win32.c'
-  else
-	srcc += 'src/rdkafka_sasl_cyrus.c'
-	conf.set10('WITH_SASL_CYRUS', true)
-	built_with += ' SASL_CYRUS'
-  endif
-  if ssl.found()
-	srcc += [ 'src/rdkafka_sasl_scram.c', 'src/rdkafka_sasl_oauthbearer.c']
-	conf.set10('WITH_SASL_SCRAM', true)
-	conf.set10('WITH_SASL_OAUTHBEARER', true)
-	built_with += ' SASL_SCRAM SASL_OAUTHBEARER'
-  endif
+	if host_machine.system() == 'windows'
+		srcc += 'src/rdkafka_sasl_win32.c'
+	else
+		srcc += 'src/rdkafka_sasl_cyrus.c'
+		conf.set10('WITH_SASL_CYRUS', true)
+		built_with += ' SASL_CYRUS'
+	endif
+	if ssl.found()
+		srcc += [ 'src/rdkafka_sasl_scram.c', 'src/rdkafka_sasl_oauthbearer.c']
+		conf.set10('WITH_SASL_SCRAM', true)
+		conf.set10('WITH_SASL_OAUTHBEARER', true)
+		built_with += ' SASL_SCRAM SASL_OAUTHBEARER'
+	endif
 endif
 
 if zlib.found()
