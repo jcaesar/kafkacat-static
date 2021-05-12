@@ -10,4 +10,5 @@ apt install -y \
 	musl-tools \
 	upx \
 	git \
-	python3-setuptools
+	python3-setuptools \
+	zip

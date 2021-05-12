@@ -7,4 +7,4 @@ source_hash = c71b8c5ff419da80c31bb8d3036a408c87ad523e0c7588e7660ee5f3c8973057
 
 patch_url = https://wrapdb.mesonbuild.com/v1/projects/rdkafka/1.7.0/1/get_zip
 patch_filename = rdkafka-1.7.0-1-wrap.zip
-patch_hash = 8f44d83f3b45bb800738d41decf1f5207126e69afd8c507240660f298480e287
+patch_hash = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

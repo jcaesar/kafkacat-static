@@ -2,3 +2,4 @@ src
 build
 *.sw[po]
 src-*.tgz
+wrappatch/tmp

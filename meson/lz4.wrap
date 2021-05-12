@@ -7,4 +7,4 @@ source_hash = 030644df4611007ff7dc962d981f390361e6c97a34e5cbc393ddfbe019ffe2c1
 
 patch_url = https://wrapdb.mesonbuild.com/v1/projects/lz4/1.9.3/1/get_zip
 patch_filename = lz4-1.9.3-1-wrap.zip
-patch_hash = e544e97f3e594442681bd2ed9ba087045a2d886c6ddfc98fc6cedea55015231e
+patch_hash = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
