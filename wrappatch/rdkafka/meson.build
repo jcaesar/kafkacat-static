@@ -173,10 +173,12 @@ configure_file(configuration: conf,
 	format: 'cmake',
 )
 
-rdkafka = library('rdkafka', srcc, install: true, dependencies: [threads, dl, zlib, zstd, sasl, ssl, lz4])
+rdkafka_deps = [threads, dl, zlib, zstd, sasl, ssl, lz4]
+rdkafka = library('rdkafka', srcc, install: true, dependencies: rdkafka_deps)
 rdkafka_dep = declare_dependency(
 	link_with: rdkafka,
 	include_directories: include_directories('include-workaround-meson'),
+	dependencies: rdkafka_deps,
 )
 pkgconfig.generate(rdkafka,
 	subdirs: 'rdkafka',
@@ -189,6 +191,7 @@ rdkafkapp = library('rdkafka++', srccpp, install: true, dependencies: rdkafka_de
 rdkafkapp_dep = declare_dependency(
 	link_with: rdkafkapp,
 	include_directories: include_directories('include-workaround-meson'),
+	dependencies: rdkafka_dep,
 )
 pkgconfig.generate(rdkafkapp,
 	subdirs: 'rdkafka',
@@ -197,3 +200,6 @@ pkgconfig.generate(rdkafkapp,
 	filebase: 'rdkafka',
 	description: 'The Apache Kafka C/C++ library'
 )
+
+subdir('examples')
+subdir('tests')
