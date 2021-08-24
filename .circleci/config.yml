@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run: ./deps.sh
       - run: ./do.sh
-      - run: tar cJvf kafkacat.txz build/kafkacat build/kafkacat-LICENSES.txt
+      - run: tar cJvf kafkacat.txz build/kcat build/kcat-LICENSES.txt
       - store_artifacts: { path: kafkacat.txz, destination: kafkacat.txz }
       - persist_to_workspace: { paths: [ kafkacat.txz ], root: . }
 

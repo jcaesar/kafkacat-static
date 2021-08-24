@@ -36,12 +36,12 @@ meson build src \
 	-Dstatic=true \
 	-Drdkafka:WITH_SSL=disabled \
 	-Drdkafka:WITH_SASL=disabled
-ninja -Cbuild kafkacat
+ninja -Cbuild kcat
 
 test "$(meson introspect --projectinfo build | jq -r .version)" == $ver || ( echo 1>&2 "Version Weirdness"; false )
-LC_ALL=C ldd build/kafkacat |& grep -qi 'not.*dynamic' || ( echo 1>&2 "Not a static executable"; ldd build/kafkacat; false )
+LC_ALL=C ldd build/kcat |& grep -qi 'not.*dynamic' || ( echo 1>&2 "Not a static executable"; ldd build/kcat; false )
 
-cat >build/kafkacat-LICENSES.txt \
+cat >build/kcat-LICENSES.txt \
 	src/meson/librdkafka-*/LICENSES.txt \
 	<(echo -e '\nyajl.LICENSE\n------------\n') \
 	src/meson/yajl-2.1.0/COPYING
