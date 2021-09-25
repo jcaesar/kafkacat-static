@@ -4,7 +4,8 @@ directory = librdkafka-1.7.0
 source_url = https://github.com/edenhill/librdkafka/archive/v1.7.0.tar.gz
 source_filename = rdkafka-1.7.0.tgz
 source_hash = c71b8c5ff419da80c31bb8d3036a408c87ad523e0c7588e7660ee5f3c8973057
+patch_directory = rdkafka
 
-patch_url = https://wrapdb.mesonbuild.com/v1/projects/rdkafka/1.7.0/1/get_zip
-patch_filename = rdkafka-1.7.0-1-wrap.zip
-patch_hash = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+[provide]
+rdkafka = rdkafka_dep
+rdkafka++ = rdkafkapp_dep

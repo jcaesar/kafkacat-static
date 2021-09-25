@@ -4,7 +4,7 @@ directory = lz4-1.9.3
 source_url = https://github.com/lz4/lz4/archive/v1.9.3.tar.gz
 source_filename = lz4-1.9.3.tgz
 source_hash = 030644df4611007ff7dc962d981f390361e6c97a34e5cbc393ddfbe019ffe2c1
+patch_directory = lz4
 
-patch_url = https://wrapdb.mesonbuild.com/v1/projects/lz4/1.9.3/1/get_zip
-patch_filename = lz4-1.9.3-1-wrap.zip
-patch_hash = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+[provide]
+liblz4 = liblz4_dep

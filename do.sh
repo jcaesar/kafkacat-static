@@ -9,24 +9,6 @@ mkdir -p src
 tar --strip-components=1 -xvf src-$ver.tgz -C src
 cp -r --reflink=auto -t src meson*
 
-mkdir -p src/meson/packagecache/
-mkdir -p wrappatch/tmp
-for p in wrappatch/*; do
-	if test "$p" == wrappatch/tmp; then
-		continue
-	fi
-	w="src/meson/$(basename "$p").wrap"
-	test -f "$w" || (echo no $w && exit -1)
-	d="$(sed -rn 's/^directory *= *//p' "$w")"
-	s="wrappatch/tmp/$d"
-	rm -rf "$s"
-	cp -r "$p" "$s"
-	f=src/meson/packagecache/$(sed -rn 's/^patch_filename *= *//p' "$w")
-	echo "Generating $f"
-	(cd wrappatch/tmp; zip -r "../../$f" "$d")
-	sed -ri 's/^(patch_hash *=).*$/\1 '$(sha256sum $f | cut -d\  -f1)/ "$w"
-done
-
 export CC=${CC-musl-gcc}
 meson build src \
 	--wrap-mode forcefallback \
