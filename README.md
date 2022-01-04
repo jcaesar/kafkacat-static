@@ -6,7 +6,7 @@ Can be downloaded and used directly, or…
 
 ## Used through docker
 ```bash
-docker rum --rm -i liftm/kafkacat -b gregor:9092 -L
+docker run --rm -i liftm/kafkacat -b gregor:9092 -L
 ```
 
 ## Installed in some other docker image
@@ -18,7 +18,7 @@ COPY --from=kafkacat / /usr
 RUN $stuff
 ```
 
-## You got a loicense for that?
+## You got a license for that?
 ```bash
 # One way
 docker save liftm/kafkacat | tar xfO - manifest.json | jq -r '.[]|.Layers|.[]' | while read l; do docker save liftm/kafkacat | tar xfO - $l | tar xfO - share/doc/kafkacat-LICENSES.txt; done
