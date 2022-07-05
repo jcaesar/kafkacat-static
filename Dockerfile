@@ -6,7 +6,7 @@ RUN ./deps.sh
 COPY . .
 RUN ./do.sh
 
-RUN upx -k --best --lzma build/kcat
+RUN if uname -m | grep -q x86; then upx -k --best --lzma build/kcat; fi
 
 RUN build/kcat -V && test $(build/kcat -h | wc -c) -gt 1000
 RUN mkdir -p /opt/install/bin/ /opt/install/share/doc/ \
