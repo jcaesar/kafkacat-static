@@ -20,8 +20,10 @@ meson build src \
     -Drdkafka:WITH_ZSTD=enabled \
     -Drdkafka:WITH_ZLIB=enabled \
     -Drdkafka:WITH_LZ4_EXT=enabled \
-	-Drdkafka:WITH_SSL=disabled \
+	-Drdkafka:WITH_SSL=enabled \
+    -Drdkafka:WITH_CURL=disabled \
 	-Drdkafka:WITH_SASL=disabled
+sed -ri s#linux/mman.h#sys/mman.h# src/meson/openssl-3.0.2/crypto/mem_sec.c
 ninja -Cbuild kcat
 
 test "$(meson introspect --projectinfo build | jq -r .version)" == $ver || ( echo 1>&2 "Version Weirdness"; false )
