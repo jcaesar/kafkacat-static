@@ -14,6 +14,7 @@ meson build src \
 	--wrap-mode forcefallback \
 	--buildtype release \
 	--strip \
+    -Db_lto=true \
 	-Ddefault_library=static \
 	-Dstatic=true \
     -Drdkafka:WITH_ZSTD=enabled \
