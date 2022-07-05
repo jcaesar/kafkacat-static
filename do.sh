@@ -16,6 +16,9 @@ meson build src \
 	--strip \
 	-Ddefault_library=static \
 	-Dstatic=true \
+    -Drdkafka:WITH_ZSTD=enabled \
+    -Drdkafka:WITH_ZLIB=enabled \
+    -Drdkafka:WITH_LZ4_EXT=enabled \
 	-Drdkafka:WITH_SSL=disabled \
 	-Drdkafka:WITH_SASL=disabled
 ninja -Cbuild kcat
