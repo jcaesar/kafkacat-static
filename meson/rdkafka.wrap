@@ -1,12 +1,12 @@
 [wrap-file]
-directory = librdkafka-1.9.0
-source_url = https://github.com/edenhill/librdkafka/archive/v1.9.0.tar.gz
-source_filename = librdkafka-1.9.0.tar.gz
-source_hash = 59b6088b69ca6cf278c3f9de5cd6b7f3fd604212cd1c59870bc531c54147e889
-patch_filename = rdkafka_1.9.0-2_patch.zip
-patch_url = https://wrapdb.mesonbuild.com/v2/rdkafka_1.9.0-2/get_patch
-patch_hash = b95271762fad7d2ec784a675837e974957fc0684dcb8ae7ff214aef52e1b2f61
-wrapdb_version = 1.9.0-2
+directory = librdkafka-1.9.2
+source_url = https://github.com/edenhill/librdkafka/archive/v1.9.2.tar.gz
+source_filename = librdkafka-1.9.2.tar.gz
+source_hash = 3fba157a9f80a0889c982acdd44608be8a46142270a389008b22d921be1198ad
+patch_filename = rdkafka_1.9.2-1_patch.zip
+patch_url = https://wrapdb.mesonbuild.com/v2/rdkafka_1.9.2-1/get_patch
+patch_hash = 53493148b830ace553a52541146deb37358498d221a6f1b546997276f18e0072
+wrapdb_version = 1.9.2-1
 
 [provide]
 rdkafka = rdkafka_dep
