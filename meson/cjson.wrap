@@ -1,14 +1,14 @@
 [wrap-file]
-directory = cJSON-1.7.15
-source_url = https://github.com/DaveGamble/cJSON/archive/refs/tags/v1.7.15.tar.gz
-source_filename = v1.7.15.tar.gz
-source_hash = 5308fd4bd90cef7aa060558514de6a1a4a0819974a26e6ed13973c5f624c24b2
-patch_filename = cjson_1.7.15-4_patch.zip
-patch_url = https://wrapdb.mesonbuild.com/v2/cjson_1.7.15-4/get_patch
-patch_hash = fb50312a7dab98b7ab039b8228c226be7b0c46dd72facc6d4d1f95a631fc1606
-wrapdb_version = 1.7.15-4
+directory = cJSON-1.7.16
+source_url = https://github.com/DaveGamble/cJSON/archive/refs/tags/v1.7.16.tar.gz
+source_filename = v1.7.16.tar.gz
+source_hash = 451131a92c55efc5457276807fc0c4c2c2707c9ee96ef90c47d68852d5384c6c
+patch_filename = cjson_1.7.16-1_patch.zip
+patch_url = https://wrapdb.mesonbuild.com/v2/cjson_1.7.16-1/get_patch
+patch_hash = 2e82a14bd7327cb9dcd83f31aa30dd41576e6382f43c383880eef1d09da6ee44
+source_fallback_url = https://github.com/mesonbuild/wrapdb/releases/download/cjson_1.7.16-1/v1.7.16.tar.gz
+wrapdb_version = 1.7.16-1
 
 [provide]
 libcjson = libcjson_dep
 libcjson_utils = libcjson_utils_dep
-

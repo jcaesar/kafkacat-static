@@ -1,4 +1,4 @@
-FROM docker.io/library/debian:bullseye as builder
+FROM docker.io/library/debian:trixie as builder
 
 WORKDIR /opt/kafkacat
 COPY ./deps.sh .
